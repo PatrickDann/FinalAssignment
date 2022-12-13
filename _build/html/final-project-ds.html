@@ -1,0 +1,1205 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Disney Movie Data Analysis &#8212; Final Assignemtent - The Data Science Toolbox</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Cheese" href="cheese.html" />
+    <link rel="prev" title="Disney Movies" href="disney.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Final Assignemtent - The Data Science Toolbox</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    A Collection of My Projects Form Other Courses
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="disney.html">
+   Disney Movies
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Disney Movie Data Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cheese.html">
+   Cheese
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="final-project-ml.html">
+   Predicting Low Fat Cheese
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/final-project-ds.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Ffinal-project-ds.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/final-project-ds.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-of-intrest">
+   Question of Intrest
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dataset-description">
+   Dataset Description
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#methods-and-results">
+   Methods and Results
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#discussions">
+   Discussions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Disney Movie Data Analysis</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-of-intrest">
+   Question of Intrest
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dataset-description">
+   Dataset Description
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#methods-and-results">
+   Methods and Results
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#discussions">
+   Discussions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="disney-movie-data-analysis">
+<h1>Disney Movie Data Analysis<a class="headerlink" href="#disney-movie-data-analysis" title="Permalink to this headline">#</a></h1>
+<p>By Patrick Dann</p>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
+<p>Back to <a class="reference internal" href="intro.html"><span class="doc std std-doc">Intro</span></a>.</p>
+</section>
+<section id="question-of-intrest">
+<h2>Question of Intrest<a class="headerlink" href="#question-of-intrest" title="Permalink to this headline">#</a></h2>
+<p>In this analysis I will see which disney director has the highest average gross earnings for the Disney films they directed after inflation. There are many factors which can influence the gross earnings of a film. By looking at the average earning of a directors movies you look at other factors which may have influenced a movies earnings to  be below or above average for a director.</p>
+</section>
+<section id="dataset-description">
+<h2>Dataset Description<a class="headerlink" href="#dataset-description" title="Permalink to this headline">#</a></h2>
+<p>The Disney Data set has 5 tables: disney-characters.csv, disney-director.csv, disney-voice-actors.csv, disney_revenue_1991-2016.csv, disney_movies_total_gross.csv. They obtained from: <a class="reference external" href="https://data.world/kgarrett/disney-character-success-00-16">https://data.world/kgarrett/disney-character-success-00-16</a></p>
+<p>I will examine the disney-director.csv and disney_movies_total_gross.csv files.</p>
+</section>
+<section id="methods-and-results">
+<h2>Methods and Results<a class="headerlink" href="#methods-and-results" title="Permalink to this headline">#</a></h2>
+<p>I will import the disney_movies_total_gross and disney-director tables since I want to look at disney movies gross by director.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> 
+
+<span class="c1"># Import all required files </span>
+<span class="n">movies_total_gross</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;C:\Users\ichir\Documents\final-assignment/disney_movies_total_gross.csv&#39;</span><span class="p">)</span>
+<span class="n">disney_directors</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;C:\Users\ichir\Documents\final-assignment\disney-director.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">movies_total_gross</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>movie_title</th>
+      <th>release_date</th>
+      <th>genre</th>
+      <th>MPAA_rating</th>
+      <th>total_gross</th>
+      <th>inflation_adjusted_gross</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Snow White and the Seven Dwarfs</td>
+      <td>Dec 21, 1937</td>
+      <td>Musical</td>
+      <td>G</td>
+      <td>$184,925,485</td>
+      <td>$5,228,953,251</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Pinocchio</td>
+      <td>Feb 9, 1940</td>
+      <td>Adventure</td>
+      <td>G</td>
+      <td>$84,300,000</td>
+      <td>$2,188,229,052</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Fantasia</td>
+      <td>Nov 13, 1940</td>
+      <td>Musical</td>
+      <td>G</td>
+      <td>$83,320,000</td>
+      <td>$2,187,090,808</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Song of the South</td>
+      <td>Nov 12, 1946</td>
+      <td>Adventure</td>
+      <td>G</td>
+      <td>$65,000,000</td>
+      <td>$1,078,510,579</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Cinderella</td>
+      <td>Feb 15, 1950</td>
+      <td>Drama</td>
+      <td>G</td>
+      <td>$85,000,000</td>
+      <td>$920,608,730</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Table 1. Disney movies Total and adjusted gross</p>
+<p>The movies_total_gross dataset has 6 columns; movie_title, release_date, genre, MPAA_rating, total_gross, and inflation_adjusted_gross.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">disney_directors</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>director</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Snow White and the Seven Dwarfs</td>
+      <td>David Hand</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Pinocchio</td>
+      <td>Ben Sharpsteen</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Fantasia</td>
+      <td>full credits</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Dumbo</td>
+      <td>Ben Sharpsteen</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Bambi</td>
+      <td>David Hand</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Table 2. Disney Movie Directors</p>
+<p>The disney_directos dataset had 2 columns; name and director.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">movies_total_gross</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 579 entries, 0 to 578
+Data columns (total 6 columns):
+ #   Column                    Non-Null Count  Dtype 
+---  ------                    --------------  ----- 
+ 0   movie_title               579 non-null    object
+ 1   release_date              579 non-null    object
+ 2   genre                     562 non-null    object
+ 3   MPAA_rating               523 non-null    object
+ 4   total_gross               579 non-null    object
+ 5   inflation_adjusted_gross  579 non-null    object
+dtypes: object(6)
+memory usage: 27.3+ KB
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are 579 rows and 6 columns for the movies_total_gross dataset.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">disney_directors</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 56 entries, 0 to 55
+Data columns (total 2 columns):
+ #   Column    Non-Null Count  Dtype 
+---  ------    --------------  ----- 
+ 0   name      56 non-null     object
+ 1   director  56 non-null     object
+dtypes: object(2)
+memory usage: 1.0+ KB
+</pre></div>
+</div>
+</div>
+</div>
+<p>The disney_directors dataset has 56 rows and 2 columns.</p>
+<p>I want to visualize which genre of disney movie has the highest average gross. I will use the inflation_adjusted_gross column from the movies_total_gross dataset since these values account for inflation and many of the disney movies were released many years ago.</p>
+<p>First I have to convert the dtype of the inflation_adjusted_gross from object to int.</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Remove commas and symbols from inflation_adjusted_gross so we can convert str to numerical</span>
+<span class="n">movies_total_gross</span><span class="p">[</span><span class="s1">&#39;inflation_adjusted_gross&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">movies_total_gross</span><span class="p">[</span><span class="s1">&#39;inflation_adjusted_gross&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">movies_total_gross</span><span class="p">[</span><span class="s1">&#39;inflation_adjusted_gross&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">movies_total_gross</span><span class="p">[</span><span class="s1">&#39;inflation_adjusted_gross&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;$&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ichir\AppData\Local\Temp\ipykernel_24996\147962967.py:3: FutureWarning: The default value of regex will change from True to False in a future version. In addition, single character regular expressions will *not* be treated as literal strings when regex=True.
+  movies_total_gross[&#39;inflation_adjusted_gross&#39;] = movies_total_gross[&#39;inflation_adjusted_gross&#39;].str.replace(&#39;$&#39;,&#39;&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Change inflation_adjusted_gross to numerical dtype so we can average it</span>
+<span class="n">movies_total_gross</span><span class="p">[</span><span class="s1">&#39;inflation_adjusted_gross&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">movies_total_gross</span><span class="p">[</span><span class="s1">&#39;inflation_adjusted_gross&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now I will group the data by genre and average the gross after adjusted for inflation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Group by genre and determine average gross</span>
+<span class="n">genre_avg_gross</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">movies_total_gross</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;genre&#39;</span><span class="p">)[</span><span class="s1">&#39;inflation_adjusted_gross&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span> <span class="o">=</span> <span class="kc">False</span><span class="p">))</span>
+
+<span class="n">genre_avg_gross</span> <span class="o">=</span> <span class="n">genre_avg_gross</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+<span class="n">genre_avg_gross</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>genre</th>
+      <th>inflation_adjusted_gross</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Musical</td>
+      <td>6.035979e+08</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Adventure</td>
+      <td>1.903974e+08</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Action</td>
+      <td>1.374734e+08</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Thriller/Suspense</td>
+      <td>8.965379e+07</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Comedy</td>
+      <td>8.466773e+07</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Romantic Comedy</td>
+      <td>7.777708e+07</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Western</td>
+      <td>7.381571e+07</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Drama</td>
+      <td>7.189302e+07</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Concert/Performance</td>
+      <td>5.741084e+07</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Black Comedy</td>
+      <td>5.224349e+07</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Horror</td>
+      <td>2.341385e+07</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Documentary</td>
+      <td>1.271803e+07</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Table 3. Average Adjusted gross of disney movies sorted by genre</p>
+<p>Now I am ready to visualize the data. I can make a bar plot to see which genre of disney movie has the highest average gross.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use altair to generate a bar plot</span>
+<span class="n">genre_gross_plot</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">genre_avg_gross</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+        <span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s2">&quot;genre:N&quot;</span><span class="p">,</span> <span class="n">sort</span><span class="o">=</span><span class="s1">&#39;-y&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Genre&quot;</span><span class="p">),</span>
+        <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s2">&quot;inflation_adjusted_gross:Q&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Average Adjusted Gross&quot;</span><span class="p">),</span>
+    <span class="p">)</span>
+    <span class="o">.</span><span class="n">properties</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Average Adjusted Gross of Disney Films by Genre&quot;</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">genre_gross_plot</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div id="altair-viz-c1be49831cec4d6895f02030965a17a2"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-c1be49831cec4d6895f02030965a17a2") {
+      outputDiv = document.getElementById("altair-viz-c1be49831cec4d6895f02030965a17a2");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-18dda85fad336e17ac8911b580eaa152"}, "mark": "bar", "encoding": {"x": {"field": "genre", "sort": "-y", "title": "Genre", "type": "nominal"}, "y": {"field": "inflation_adjusted_gross", "title": "Average Adjusted Gross", "type": "quantitative"}}, "height": 300, "title": "Average Adjusted Gross of Disney Films by Genre", "width": 500, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-18dda85fad336e17ac8911b580eaa152": [{"genre": "Musical", "inflation_adjusted_gross": 603597861.0}, {"genre": "Adventure", "inflation_adjusted_gross": 190397412.0775194}, {"genre": "Action", "inflation_adjusted_gross": 137473419.65}, {"genre": "Thriller/Suspense", "inflation_adjusted_gross": 89653789.75}, {"genre": "Comedy", "inflation_adjusted_gross": 84667730.29120879}, {"genre": "Romantic Comedy", "inflation_adjusted_gross": 77777084.04347827}, {"genre": "Western", "inflation_adjusted_gross": 73815706.57142857}, {"genre": "Drama", "inflation_adjusted_gross": 71893021.78947368}, {"genre": "Concert/Performance", "inflation_adjusted_gross": 57410839.0}, {"genre": "Black Comedy", "inflation_adjusted_gross": 52243491.666666664}, {"genre": "Horror", "inflation_adjusted_gross": 23413848.666666668}, {"genre": "Documentary", "inflation_adjusted_gross": 12718026.125}]}}, {"mode": "vega-lite"});
+</script></div></div>
+</div>
+<p>Figure 1. Bar graph of Average Adjusted Gross of Disney Films By Genere</p>
+<p>Here we can see that disney musicals have a significantly higher gross than other disney movie genres.</p>
+<p>Now I will combine the disney_directors and movies_total_gross datasets, group the new combined dataset by director and average the inflation_adjusted_gross with a custom function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import the custom function</span>
+<span class="kn">from</span> <span class="nn">function</span> <span class="kn">import</span> <span class="n">merge_group_avg</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Running the custom funtion on the datasets</span>
+<span class="n">director_gross</span> <span class="o">=</span> <span class="n">merge_group_avg</span><span class="p">(</span><span class="n">disney_directors</span><span class="p">,</span> <span class="n">movies_total_gross</span><span class="p">,</span> <span class="s1">&#39;director&#39;</span><span class="p">,</span> <span class="s1">&#39;inflation_adjusted_gross&#39;</span><span class="p">)</span>
+<span class="n">director_gross</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>director</th>
+      <th>inflation_adjusted_gross</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>David Hand</td>
+      <td>3.074781e+09</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Ben Sharpsteen</td>
+      <td>1.633370e+09</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Norman Ferguson</td>
+      <td>1.236036e+09</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>full credits</td>
+      <td>1.172074e+09</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Jack Kinney</td>
+      <td>5.093745e+08</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Hamilton Luske</td>
+      <td>4.641125e+08</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Clyde Geronimi</td>
+      <td>2.397090e+08</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Chris Williams</td>
+      <td>1.627487e+08</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Art Stevens</td>
+      <td>1.203774e+08</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Rich Moore</td>
+      <td>1.179573e+08</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Wilfred Jackson</td>
+      <td>1.095816e+08</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Wolfgang Reitherman</td>
+      <td>9.820175e+07</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Mark Dindal</td>
+      <td>8.754220e+07</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Roger Allers</td>
+      <td>7.718490e+07</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Mike Gabriel</td>
+      <td>7.688104e+07</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Barry Cook</td>
+      <td>7.066996e+07</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Chris Buck</td>
+      <td>5.860032e+07</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Don Hall</td>
+      <td>5.478720e+07</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Byron Howard</td>
+      <td>5.068646e+07</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>Chris Sanders</td>
+      <td>5.055314e+07</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>George Scribner</td>
+      <td>4.851798e+07</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>Nathan Greno</td>
+      <td>4.218320e+07</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>Will Finn</td>
+      <td>3.141543e+07</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>Stephen J. Anderson</td>
+      <td>2.988106e+07</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>Ron Clements</td>
+      <td>2.266911e+07</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>Robert Walker</td>
+      <td>2.230296e+07</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>Ralph Zondag</td>
+      <td>2.107500e+07</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>Gary Trousdale</td>
+      <td>1.224501e+07</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>Ted Berman</td>
+      <td>9.088096e+06</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Table 4. Disney Directors Average Adjusted gross of their Disney Movies</p>
+<p>Now I have a dataset with the disney directors and their average gross from their disneys movies after inflation.</p>
+<p>I can plot this to visualize this with a bar plot</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Visualize the Disney directors with the highest average gross from their Disney films</span>
+<span class="n">director_gross_plot</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">director_gross</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+        <span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s2">&quot;director:N&quot;</span><span class="p">,</span> <span class="n">sort</span><span class="o">=</span><span class="s1">&#39;-y&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Director&quot;</span><span class="p">),</span>
+        <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s2">&quot;inflation_adjusted_gross:Q&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Average Adjusted Gross&quot;</span><span class="p">),</span>
+    <span class="p">)</span>
+    <span class="o">.</span><span class="n">properties</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Average Adjusted Gross by Disney Director&quot;</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">director_gross_plot</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div id="altair-viz-ad18a20fbf2c401aae45b9c40efb1f69"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-ad18a20fbf2c401aae45b9c40efb1f69") {
+      outputDiv = document.getElementById("altair-viz-ad18a20fbf2c401aae45b9c40efb1f69");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-00785de54d6c471e77ec6d56d1247f80"}, "mark": "bar", "encoding": {"x": {"field": "director", "sort": "-y", "title": "Director", "type": "nominal"}, "y": {"field": "inflation_adjusted_gross", "title": "Average Adjusted Gross", "type": "quantitative"}}, "height": 300, "title": "Average Adjusted Gross by Disney Director", "width": 500, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-00785de54d6c471e77ec6d56d1247f80": [{"director": "David Hand", "inflation_adjusted_gross": 3074780990.5}, {"director": "Ben Sharpsteen", "inflation_adjusted_gross": 1633369815.5}, {"director": "Norman Ferguson", "inflation_adjusted_gross": 1236035515.0}, {"director": "full credits", "inflation_adjusted_gross": 1172074234.5}, {"director": "Jack Kinney", "inflation_adjusted_gross": 509374492.75}, {"director": "Hamilton Luske", "inflation_adjusted_gross": 464112516.0}, {"director": "Clyde Geronimi", "inflation_adjusted_gross": 239708969.0}, {"director": "Chris Williams", "inflation_adjusted_gross": 162748712.0}, {"director": "Art Stevens", "inflation_adjusted_gross": 120377374.0}, {"director": "Rich Moore", "inflation_adjusted_gross": 117957323.0}, {"director": "Wilfred Jackson", "inflation_adjusted_gross": 109581646.0}, {"director": "Wolfgang Reitherman", "inflation_adjusted_gross": 98201748.0}, {"director": "Mark Dindal", "inflation_adjusted_gross": 87542195.0}, {"director": "Roger Allers", "inflation_adjusted_gross": 77184895.0}, {"director": "Mike Gabriel", "inflation_adjusted_gross": 76881044.0}, {"director": "Barry Cook", "inflation_adjusted_gross": 70669955.0}, {"director": "Chris Buck", "inflation_adjusted_gross": 58600323.0}, {"director": "Don Hall", "inflation_adjusted_gross": 54787202.0}, {"director": "Byron Howard", "inflation_adjusted_gross": 50686462.0}, {"director": "Chris Sanders", "inflation_adjusted_gross": 50553142.0}, {"director": "George Scribner", "inflation_adjusted_gross": 48517980.0}, {"director": "Nathan Greno", "inflation_adjusted_gross": 42183197.0}, {"director": "Will Finn", "inflation_adjusted_gross": 31415432.0}, {"director": "Stephen J. Anderson", "inflation_adjusted_gross": 29881058.0}, {"director": "Ron Clements", "inflation_adjusted_gross": 22669105.714285713}, {"director": "Robert Walker", "inflation_adjusted_gross": 22302956.0}, {"director": "Ralph Zondag", "inflation_adjusted_gross": 21075000.0}, {"director": "Gary Trousdale", "inflation_adjusted_gross": 12245007.666666666}, {"director": "Ted Berman", "inflation_adjusted_gross": 9088096.0}]}}, {"mode": "vega-lite"});
+</script></div></div>
+</div>
+<p>Figure 2. Bar chart of Disney Directors Average Adjusted gross of their Disney Movies</p>
+</section>
+<section id="discussions">
+<h2>Discussions<a class="headerlink" href="#discussions" title="Permalink to this headline">#</a></h2>
+<p>I analyzed the Disney movie datasets and tried to determine which disney directors movies had the highest average gross. I looked at the adjusted gross after inflation since many of the disney movies where released in the mid 1900s and the adjusted gross would be more relevant than looking at the total gross. First I checked which genre of disney movie has the highest average gross after inflation. I wanted to look at this because there are many factors which can influence a movies gross. Disney musicals where significantly higher grossing on average. This was not too suprising since there are many popular disney musicals. However, what was suprising was the magnitude of difference between Disney musicals and Disney adventures, the second highest average grossing genre. Disney musicals were on average more than three times higher grossing than Disney adventures.</p>
+<p>David Hand on had the highest average grossing of his disney movies. This was about Two times greater than the next director with the next highest average grossing disney films. It would be interesting to look further into David Hand’s Disney movies and what makes his movies popular.</p>
+<p>With the directors average gross for their disney films you can further examine his individual films to see if they gross above or below average. This could be helpful for looking at other factor which can effect how much a film may gross.</p>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
+<p>online resources used:
+{cite}’5’
+{cite}’6’</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="disney.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Disney Movies</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="cheese.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Cheese</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Patrick Dann<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
