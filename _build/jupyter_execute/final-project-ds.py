@@ -178,8 +178,8 @@ director_gross_plot
 # ## References
 
 # online resources used: 
-# {cite}'5'
-# {cite}'6'
+# {cite}`5`
+# {cite}`6`
 # 
 
 # In[ ]:

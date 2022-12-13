@@ -2,18 +2,19 @@
 # coding: utf-8
 
 # # Predicting Low Fat Cheese
-# #### by Patrick Dann
+# 
+# by Patrick Dann
 # 
 
 # ## Introduction
-# 
-# Back to [Intro](intro.md).
 
 # In this Project I will predict the fat content of cheese based on it's properties. This is a classification problem since we will be grouping the cheese into a category such as; low fat, high fat, etc. 
 # 
 # Predicting the fat content of cheese is desiarable since the fat content may be important for cooking and how the cheese properties will influsence a dish. Cheese ia also a source of saturated fat which would be link to the total fat content of the cheese and is seen as undisiarable by many people. Additionally the fat content will greatly effect the calorie content of the cheese. Therefore, when manufacturing a cheese the fat content should be considered and knowing what properties contribute to making a low fat cheese is valuable. 
 # 
 # We will be looking for cheese with a low fat content and see what properties are predictive for such cheeses. 
+# 
+# Back to [Intro](intro.md).
 
 # ## Exploratory Data Analysis
 
@@ -494,5 +495,13 @@ pd.DataFrame(data).sort_values(by='coefficients', ascending=False)
 
 # ## References 
 
-# {cite}'7'
-# {cite}'8'
+# {cite}`7`
+# {cite}`8`
+
+# 
+
+# In[ ]:
+
+
+
+
